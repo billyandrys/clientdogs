@@ -1,0 +1,43 @@
+
+.nav{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    padding: 0 80px;
+    justify-content:space-between;
+    background-color: #fff;
+    overflow:hidden;
+    flex-wrap:wrap;
+}
+
+.nav__search{
+    padding:0.5em;
+}
+
+.nav__logo{
+    
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(238, 236, 153), #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    cursor: pointer;
+    cursor: col-resize 4.7;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    
+    }
+
+    @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+        100% {
+          background-position: 500%;
+        }
+      }
+
