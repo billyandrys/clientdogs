@@ -1,7 +1,7 @@
 import Modal from './Modal'
 import FormCreate from '../../pages/FormCreate/FormCreate'
 import {UseModal} from '../../hooks/UseModal'
-
+import css from './style.module.css'
 
 const ModalForm = ()=>{
 
@@ -9,7 +9,7 @@ const ModalForm = ()=>{
     
     return (
         <div>
-                <button onClick={openModal}>Add dog</button>
+                <button className={css.button} onClick={openModal}>Add dog</button>
                 <Modal isOpen = {isOpen } openModal={openModal} closeModal={closeModal}>
                     <FormCreate />
                 </Modal>

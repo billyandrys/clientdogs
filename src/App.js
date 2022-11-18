@@ -7,12 +7,12 @@ import video from './assets/Cachorro - 4740.mp4'
 function App() {
   return (
     <Link to='/home'>
-    <div className="App">
+    <div className="App" >
        
-      
+    <img className='img_mar' src={imagenLanding} alt='DogMar'/>
       
       <Link to='/home' className='title'>Henry dogs</Link><span className='cursor'>|</span>
-      <img className='img_mar' src={imagenLanding} alt='DogMar'/>
+      
     
     </div>
     </Link>
@@ -20,4 +20,4 @@ function App() {
 }
 
 export default App;
-//  <Link className='link__home'to='/home'>Home</Link>
+//  <Link className='link__home'to='/home'>Home</Link> 

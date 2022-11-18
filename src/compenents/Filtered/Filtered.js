@@ -29,7 +29,7 @@ const Filtered = ({ setRender, setCurrentPage }) => {
     <>
       <ul className={css.list}>
         <li className={css.list__items}>
-          <button onClick ={handleClick}>AllDogs</button>
+          <button className={css.button} onClick ={handleClick}>AllDogs</button>
         </li>
         <li>
           <Select
