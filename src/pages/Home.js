@@ -28,7 +28,7 @@ const Home = () => {
     setCurrentPage(numberPagine);
   };
 
-  console.log(loading) 
+  
   return (
     <>
      { loading ? <Loading/> :

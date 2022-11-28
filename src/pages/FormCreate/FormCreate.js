@@ -58,9 +58,10 @@ const valiateForm = (form) => {
 function FormCreate() {
   const dispatch = useDispatch();
   const allTemperaments = useSelector((state) => state.allTemperaments);
+  
   const [ send, setSend ] = useState(false)
 
-
+  const [ duplecate, setDuplicate ] = useState(false)
 
   const {
     form,
@@ -96,8 +97,10 @@ function FormCreate() {
 
     setErrors(rs);
     if (!Object.keys(rs).length) {
-      dispatch(createDog(form));
-
+      
+ try{
+  dispatch(createDog(form, setSend, setDuplicate));
+     
       setForm({
         name: "",
         weight: "",
@@ -106,18 +109,28 @@ function FormCreate() {
         life_span: "",
         image: "",
       });
-      setSend(true);
-    }
+      
+     
+      
+ }catch(e){
+  console.log('Error duplicateBreed')
+ }
+    
+   
+
+      
+    
   };
 
-
   
+}
 
   return (
     <>
       {send ? ( <SendOk setSend={setSend}/>): (
         <form className={css.form} onSubmit={save}>
       <h2 className={css.tilte}>Add Dog</h2>
+      {duplecate && <h43 className={css.duplicate}>Breed duplicated</h43>}
       <div className={css.form__input}>
         <input
           type=""

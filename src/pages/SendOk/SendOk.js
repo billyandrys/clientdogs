@@ -8,7 +8,7 @@ class SendOk extends React.Component {
   }
 
   render() {
-    console.log(this.props.SendOk);
+    
     return (
       <div className={css.container}>
         <img

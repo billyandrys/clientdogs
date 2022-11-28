@@ -121,31 +121,38 @@ export const getDogById = (payload)=>dispatch=>{
 }
 
 
-export const createDog = (payload)=>dispatch=>{
+export const createDog =  (payload, setSend, setDuplicate)=>async (dispatch)=>{
+   
 
-  
-
-
-  
-  return async function (dispatch){
+  try{
     let name = payload.name[0].toUpperCase() + payload.name.substring(1)
-    const test = { ...payload, name:name}
-      axios.post(servicesCreateDog, test)
-     .then((data)=>{
-      dispatch(getAllDogs())
-     })
-    
+        const test = { ...payload, name:name }
+         await axios.post(servicesCreateDog, test)
+          .then(res=>{
+            dispatch(getAllDogs())
+            dispatch({
+              type:  TYPE.DUPLICATE_BREED,
+              payload: false
+            })
+            setSend(true)
+            setDuplicate(false)
+          })
+            .catch(err=>{
+              dispatch({
+                type:  TYPE.DUPLICATE_BREED,
+                payload: true
+              })
+              setSend(false)
+              setDuplicate(true)
+            })
+
+        
+            //return response
+  }catch(err){
+      console.log(err)
   }
-
-  // let name = payload.name[0].toUpperCase() + payload.name.substring(1)
-  // const test = { ...payload, name:anme }
-  //const response = await axios.post(servicesCreateDog, test)
-   dispatch(getAllDogs())
-  //   return response
-
-
-
-}
+  
+  }
 
 
 export const closeErrors = ()=>dispatch=>{

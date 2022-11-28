@@ -7,7 +7,8 @@ const initialState = {
   allWeight: [],
   dogById :[],
   laoding:true,
-  errors:false
+  errors:false,
+  duplicateBreed:false
 };
 const ORDER_ASC = "Asc"
 const rootReducer = (state = initialState, action) => {
@@ -134,6 +135,12 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           errors: action.payload
         }
+
+    case TYPE.DUPLICATE_BREED :
+      return {
+        ...state,
+        duplicateBreed:action.payload
+      }
       
 
     default:

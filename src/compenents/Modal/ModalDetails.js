@@ -1,7 +1,7 @@
 import { UseModal } from "../../hooks/UseModal";
 import Modal from "./Modal";
 import Detail from "../../pages/Details/Detail";
-
+import  './style.css'
 
 const ModalDetails = ({
   id,
@@ -17,7 +17,7 @@ const ModalDetails = ({
 
   return (
     <div>
-      <button onClick={openModal}>Mores Details</button>
+      <button className='button__more'  onClick={openModal}>Mores Details</button>
       <Modal isOpen={isOpen} closeModal={closeModal} openModal={openModal}>
         <Detail
           id={id}
